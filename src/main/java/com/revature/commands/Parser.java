@@ -1,8 +1,7 @@
-package com.revature;
+package com.revature.commands;
 
 import java.io.*;
 import java.util.Scanner;
-import com.revature.commands.*;
 
 public class Parser {
     public void parse() {
@@ -17,6 +16,10 @@ public class Parser {
             if (line.equals("exit")) {
                 Exit endOfSession = new Exit();
                 break;
+            }
+
+            if (line.equals("help")) {
+                Help helper = new Help();
             }
         }
 

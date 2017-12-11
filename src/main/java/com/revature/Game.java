@@ -1,5 +1,7 @@
 package com.revature;
 
+import com.revature.commands.Parser;
+
 public class Game 
 {
     static String startingMessage = "";

@@ -1,5 +1,7 @@
 package com.revature;
 
+import com.revature.commands.*;
+
 public class Player {
     private static Player PLAYER;
 
