@@ -39,4 +39,12 @@ public class Room implements Describable {
     public ArrayList<Item> getItems() {
         return items;
     }
+
+    public void addItem(Item newItem) {
+        items.add(newItem);
+    }
+
+    public void removeItem(Item itemToRemove) {
+        items.remove(itemToRemove);
+    }
 }

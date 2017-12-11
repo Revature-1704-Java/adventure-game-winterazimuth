@@ -6,4 +6,6 @@ public abstract class Command {
     }
 
     public abstract void run();
+
+    public abstract boolean isGameOver();
 }

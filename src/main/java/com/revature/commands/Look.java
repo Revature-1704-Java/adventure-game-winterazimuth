@@ -48,4 +48,8 @@ public class Look extends Command {
                 System.out.println("No item by that name is around here.");
         }
     }
+
+    public boolean isGameOver() {
+        return false;
+    }
 }

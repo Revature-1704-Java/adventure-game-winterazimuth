@@ -1,9 +1,11 @@
 package com.revature;
 
 import java.util.*;
+import com.revature.commands.Exit;
 
 public class GameBuilder {
     static ArrayList<Room> rooms = new ArrayList<Room>();
+    public static String victoryItemName;
 
     public void buildGame(String gameName) {
         if (gameName.equals("Coffee Quest") == true) {
@@ -31,10 +33,25 @@ public class GameBuilder {
             rooms.add(magicalWoods);
 
             Game.setCurrentRoom(starterTown);
+
+            Exit.setVictoryText("At last, you hold the coffee in your hands! Who cares about the hero? You drink it yourself.\nIt's perfect.");
+            victoryItemName = "coffee";
         }
     }
 
     public static ArrayList<Room> getRoomsList() {
         return rooms;
+    }
+
+    public static void addRoom(Room newRoom) {
+        rooms.add(newRoom);
+    }
+
+    public static void removeRoom(String roomName) throws ConcurrentModificationException {
+        for (Room r : rooms) {
+            if (roomName.equals(r.getName())) {
+                r.setName("");
+            }
+        }
     }
 }

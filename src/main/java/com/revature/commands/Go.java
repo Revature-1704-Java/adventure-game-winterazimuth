@@ -34,4 +34,8 @@ public class Go extends Command {
             }
         }
     }
+
+    public boolean isGameOver() {
+        return false;
+    }
 }

@@ -25,18 +25,40 @@ public class Parser {
                 Help helper = new Help();
                 helper.run();
                 recognized = true;
+                if (helper.isGameOver() == true)
+                    break;
             }
 
             if (line.equals("look")) {
                 Look looker = new Look();
                 looker.run();
                 recognized = true;
+                if (looker.isGameOver() == true)
+                    break;
             }
 
             if (line.equals("go")) {
                 Go goer = new Go();
                 goer.run();
                 recognized = true;
+                if (goer.isGameOver() == true)
+                    break;
+            }
+
+            if (line.equals("inv")) {
+                Inv inver = new Inv();
+                inver.run();
+                recognized = true;
+                if (inver.isGameOver() == true)
+                    break;
+            }
+
+            if (line.equals("get")) {
+                Get getter = new Get();
+                getter.run();
+                recognized = true;
+                if (getter.isGameOver() == true)
+                    break;
             }
 
             StringTokenizer token = new StringTokenizer(line, " ");
@@ -47,6 +69,8 @@ public class Parser {
                         Help helper = new Help();
                         helper.run(token.nextToken());
                         recognized = true;
+                        if (helper.isGameOver() == true)
+                            break;
                     }
                 }
                 if (word.equals("go")) {
@@ -54,6 +78,8 @@ public class Parser {
                         Go goer = new Go();
                         goer.run(token.nextToken());
                         recognized = true;
+                        if (goer.isGameOver() == true)
+                            break;
                     }
                 }
                 if (word.equals("look")) {
@@ -61,6 +87,17 @@ public class Parser {
                         Look looker = new Look();
                         looker.run(token.nextToken());
                         recognized = true;
+                        if (looker.isGameOver() == true)
+                            break;
+                    }
+                }
+                if (word.equals("get")) {
+                    if (token.hasMoreElements() == true) {
+                        Get getter = new Get();
+                        getter.run(token.nextToken());
+                        recognized = true;
+                        if (getter.isGameOver() == true)
+                            break;
                     }
                 }
             }
