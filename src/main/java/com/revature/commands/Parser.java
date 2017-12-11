@@ -25,6 +25,11 @@ public class Parser {
                 helper.run();
             }
 
+            if (line.equals("look")) {
+                Look looker = new Look();
+                looker.run();
+            }
+
             StringTokenizer token = new StringTokenizer(line, " ");
             if (token.hasMoreElements() == true) {
                 word = token.nextToken();

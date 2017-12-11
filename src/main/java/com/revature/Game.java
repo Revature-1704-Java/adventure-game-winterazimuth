@@ -1,11 +1,11 @@
 package com.revature;
 
 import com.revature.commands.Parser;
-
 public class Game 
 {
     static String startingMessage = "";
     static String gameName = "Coffee Quest";
+    static Room currentRoom;
 
     public static void main( String[] args )
     {
@@ -26,5 +26,13 @@ public class Game
 
     public static String getGameName() {
         return gameName;
+    }
+
+    public static void setCurrentRoom(Room newCurrentRoom) {
+        currentRoom = newCurrentRoom;
+    }
+
+    public static Room getCurrentRoom() {
+        return currentRoom;
     }
 }
