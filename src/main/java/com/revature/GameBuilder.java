@@ -11,7 +11,10 @@ public class GameBuilder {
             RoomFactory roomMaker = new RoomFactory();
 
             ArrayList<String> starterTownExits = new ArrayList<String>();
+            starterTownExits.add("woods");
+
             ArrayList<String> magicalWoodsExits = new ArrayList<String>();
+            magicalWoodsExits.add("town");
 
             Room starterTown = roomMaker.getRoom("town", "This is the starter town, near the magical woods. There are plenty of stores and low-level enemies here, but you don't have to bother with that -- you're just an intern.", starterTownExits);
             Room magicalWoods = roomMaker.getRoom("woods", "These are the magical woods, full of flying pigs and tutorial fairies.", magicalWoodsExits);

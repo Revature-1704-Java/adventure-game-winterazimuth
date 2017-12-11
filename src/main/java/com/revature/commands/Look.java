@@ -11,6 +11,10 @@ public class Look extends Command {
     public void run() {
         Room lookingAt = Game.getCurrentRoom();
         System.out.println(lookingAt.look());
+        System.out.println("Places you can go from here: ");
+        for (String s : lookingAt.getExits()) {
+            System.out.println(s);
+        }
     }
 
     public void run(String itemName) {

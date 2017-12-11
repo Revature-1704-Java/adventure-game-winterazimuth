@@ -9,6 +9,7 @@ public class Parser {
         Scanner sc = new Scanner(System.in);
         String line = "";
         String word = "";
+        boolean recognized = false;
 
         while (true) {
             line = sc.nextLine();
@@ -23,11 +24,13 @@ public class Parser {
             if (line.equals("help")) {
                 Help helper = new Help();
                 helper.run();
+                recognized = true;
             }
 
             if (line.equals("look")) {
                 Look looker = new Look();
                 looker.run();
+                recognized = true;
             }
 
             StringTokenizer token = new StringTokenizer(line, " ");
@@ -37,9 +40,13 @@ public class Parser {
                     if (token.hasMoreElements() == true) {
                         Help helper = new Help();
                         helper.run(token.nextToken());
+                        recognized = true;
                     }
                 }
             }
+            
+            if (recognized == false) System.out.println("That's not a command I recognize. Type help for a list of commands.");
+            recognized = false;
         }
 
         sc.close();
