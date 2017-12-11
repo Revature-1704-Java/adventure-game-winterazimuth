@@ -4,7 +4,7 @@ public class Game
 {
     public static void main( String[] args )
     {
-        Player you = new Player();
+        Player you = Player.makePlayer();
         GameBuilder ourGameBuilder = new GameBuilder();
         Parser io = new Parser();
 

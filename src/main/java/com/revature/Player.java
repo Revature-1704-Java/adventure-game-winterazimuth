@@ -1,7 +1,17 @@
 package com.revature;
 
 public class Player {
-    public void Player() {
-        System.out.println("New player");
+    private static Player PLAYER;
+
+    private Player() {
+        super();
+    }
+
+    public static Player makePlayer() {
+        if (PLAYER == null) {
+            PLAYER = new Player();
+            System.out.println("New player");
+        }
+        return PLAYER;
     }
 }
