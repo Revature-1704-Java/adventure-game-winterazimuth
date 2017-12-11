@@ -3,21 +3,24 @@ package com.revature.commands;
 import com.revature.Game;
 
 public class Help extends Command {
-    String whatIDo = "Lists and describes the game's commands";
+    public void helptext() {
+        System.out.println("Lists and describes the game's commands");
+    }
 
-    Help() {
+    public void run() {
         System.out.println("The game's commands are: help, exit");
         System.out.println("For a description of each command, type \"help command\"");
     }
 
-    Help(String verb) {
+    public void run(String verb) {
         boolean answered = false;
         if (verb.equals("exit")) {
-            Exit.helptext();
+            Exit exithelp = new Exit();
+            exithelp.helptext();
             answered = true;
         }
         if (verb.equals("help")) {
-            Help.helptext();
+            helptext();
             answered = true;
         }
         if (answered == false)
