@@ -6,6 +6,7 @@ import com.revature.GameBuilder;
 import java.util.*;
 
 public class Go extends Command {
+    
     public void helptext() {
         System.out.println("This is how you go to another place in the game. Type look to see where you can go, then type \"go place\" to reach one of those nearby places.");
     }
@@ -14,9 +15,10 @@ public class Go extends Command {
         System.out.println("Go where?");
     }
 
+    public boolean matchFound = false;
+
     public void run(String destination) {
         Room start = Game.getCurrentRoom();
-        boolean matchFound = false;
         for (String s : start.getExits()) {
             if (destination.equals(s))
                 matchFound = true;

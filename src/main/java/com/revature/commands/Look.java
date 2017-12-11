@@ -5,7 +5,7 @@ import com.revature.Room;
 import com.revature.Item;
 import java.util.*;
 
-import javax.net.ssl.ExtendedSSLSession;
+
 
 public class Look extends Command {
     Room lookingAt = Game.getCurrentRoom();
@@ -33,8 +33,9 @@ public class Look extends Command {
         }
     }
 
+    public boolean itemFound = false;
+
     public void run(String itemName) {
-        boolean itemFound = false;
         if (itemsInRoom.isEmpty() == true)
             System.out.println("There aren't any items in this place for you to look at.");
         else {

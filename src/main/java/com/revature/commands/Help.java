@@ -12,8 +12,10 @@ public class Help extends Command {
         System.out.println("For a description of each command, type \"help command\"");
     }
 
+    public boolean answered = false;
+
     public void run(String verb) {
-        boolean answered = false;
+        
         if (verb.equals("exit")) {
             Exit exithelp = new Exit();
             exithelp.helptext();
