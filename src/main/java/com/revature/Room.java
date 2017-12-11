@@ -6,6 +6,7 @@ public class Room implements Describable {
     private String name = "";
     private String description = "";
     private ArrayList<String> exits = new ArrayList<String>();
+    private ArrayList<Item> items = new ArrayList<Item>();
 
     public void setDescription(String text) {
         description = text;
@@ -29,5 +30,13 @@ public class Room implements Describable {
 
     public ArrayList<String> getExits() {
         return exits;
+    }
+
+    public void setItems(ArrayList<Item> newItems) {
+        items = newItems;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 }

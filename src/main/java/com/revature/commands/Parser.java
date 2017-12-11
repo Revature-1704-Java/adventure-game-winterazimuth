@@ -56,6 +56,13 @@ public class Parser {
                         recognized = true;
                     }
                 }
+                if (word.equals("look")) {
+                    if (token.hasMoreElements() == true) {
+                        Look looker = new Look();
+                        looker.run(token.nextToken());
+                        recognized = true;
+                    }
+                }
             }
             
             if (recognized == false) System.out.println("That's not a command I recognize. Type help for a list of commands.");
