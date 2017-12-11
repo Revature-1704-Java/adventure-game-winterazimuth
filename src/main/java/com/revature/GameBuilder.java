@@ -3,7 +3,7 @@ package com.revature;
 import java.util.*;
 
 public class GameBuilder {
-    ArrayList<Room> rooms = new ArrayList<Room>();
+    static ArrayList<Room> rooms = new ArrayList<Room>();
 
     public void buildGame(String gameName) {
         if (gameName.equals("Coffee Quest") == true) {
@@ -20,8 +20,13 @@ public class GameBuilder {
             Room magicalWoods = roomMaker.getRoom("woods", "These are the magical woods, full of flying pigs and tutorial fairies.", magicalWoodsExits);
 
             rooms.add(starterTown);
+            rooms.add(magicalWoods);
 
             Game.setCurrentRoom(starterTown);
         }
+    }
+
+    public static ArrayList<Room> getRoomsList() {
+        return rooms;
     }
 }

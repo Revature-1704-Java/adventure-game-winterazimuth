@@ -33,6 +33,12 @@ public class Parser {
                 recognized = true;
             }
 
+            if (line.equals("go")) {
+                Go goer = new Go();
+                goer.run();
+                recognized = true;
+            }
+
             StringTokenizer token = new StringTokenizer(line, " ");
             if (token.hasMoreElements() == true) {
                 word = token.nextToken();
@@ -40,6 +46,13 @@ public class Parser {
                     if (token.hasMoreElements() == true) {
                         Help helper = new Help();
                         helper.run(token.nextToken());
+                        recognized = true;
+                    }
+                }
+                if (word.equals("go")) {
+                    if (token.hasMoreElements() == true) {
+                        Go goer = new Go();
+                        goer.run(token.nextToken());
                         recognized = true;
                     }
                 }

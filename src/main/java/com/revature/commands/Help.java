@@ -8,7 +8,7 @@ public class Help extends Command {
     }
 
     public void run() {
-        System.out.println("The game's commands are: help, look, exit");
+        System.out.println("The game's commands are: help, look, go, exit");
         System.out.println("For a description of each command, type \"help command\"");
     }
 
@@ -22,6 +22,11 @@ public class Help extends Command {
         if (verb.equals("look")) {
             Look lookhelp = new Look();
             lookhelp.helptext();
+            answered = true;
+        }
+        if (verb.equals("go")) {
+            Go gohelp = new Go();
+            gohelp.helptext();
             answered = true;
         }
         if (verb.equals("help")) {
