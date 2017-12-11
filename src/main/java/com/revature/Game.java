@@ -2,6 +2,8 @@ package com.revature;
 
 public class Game 
 {
+    static String startingMessage = "";
+    
     public static void main( String[] args )
     {
         Player you = Player.makePlayer();
@@ -10,6 +12,10 @@ public class Game
 
         ourGameBuilder.buildGame("Coffee Quest");
 
-        System.out.println( "Hello World!" );
+        System.out.println(startingMessage);
+    }
+
+    public static void setStartingMessage(String message) {
+        startingMessage = message;
     }
 }
